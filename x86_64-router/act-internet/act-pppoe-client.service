@@ -1,0 +1,12 @@
+[Unit]
+Description=ACT PPPOE Client
+After=syslog.target
+
+[Service]
+ExecStart=/bin/bash pppoe-start
+Type=forking
+ExecStop=/bin/bash pppoe-stop
+#PIDFile=/var/run/pppoe-adsl.pid.pppoe
+
+[Install]
+WantedBy=multi-user.target
